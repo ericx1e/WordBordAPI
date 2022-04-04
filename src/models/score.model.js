@@ -9,8 +9,9 @@ const schema = new mongoose.Schema({
 
 schema.pre('save', function (next) {
     let _this = this
+    _this.name = _this.name.trim()
     let filter = new Filter()
-    if (filter.isProfane(_this.name) || _this.name.length > 6) {
+    if (filter.isProfane(_this.name) || _this.name.length > 6 || _this.name.length == 0) {
         next(new Error("Name not allowed."))
     } else next()
 })
