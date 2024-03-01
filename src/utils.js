@@ -11,7 +11,7 @@ const fileToArray = (name) => {
 const getTodayIndex = () => {
     const adjusted = moment().tz('America/New_York') // always adjust to EST
 
-    return adjusted.dayOfYear() + 365 * (adjusted.year() - 2022)
+    return adjusted.dayOfYear() + 365 * (adjusted.year() - 2024)
 }
 
 const simulateGame = async (board, moves) => {
